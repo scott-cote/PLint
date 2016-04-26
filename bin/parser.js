@@ -1,11 +1,11 @@
 
-UNIT_TYPE -> PROCEDURE [TOKEN_SLASH];
+unit_type -> procedure [token_slash];
 
-PROCEDURE -> TOKEN_KEYWORD_CREATE [TOKEN_KEYWORD_OR TOKEN_KEYWORD_REPLACE]
- TOKEN_KEYWORD_PROCEDURE TOKEN_IDENTIFIER {TOKEN_KEYWORD_IS | TOKEN_KEYWORD_AS}
- TOKEN_KEYWORD_BEGIN PROCEDURE_STATEMENTS TOKEN_KEYWORD_END [TOKEN_IDENTIFIER];
+procedure -> token_keyword_create [token_keyword_or token_keyword_replace]
+ token_keyword_procedure token_identifier {token_keyword_is | token_keyword_as}
+ token_keyword_begin procedure_statements token_keyword_end [token_identifier];
 
-PROCEDURE_STATEMENTS -> [PROCEDURE_STATEMENTS] PROCEDURE_STATEMENT;
+procedure_statements -> [procedure_statements] procedure_statement;
 
-PROCEDURE_STATEMENT -> [TOKEN_IDENTIFIER TOKEN_PERIOD] TOKEN_IDENTIFIER
- TOKEN_LEFT_PAREN [TOKEN_STRING] TOKEN_RIGHT_PAREN TOKEN_SEMICOLON;
+procedure_statement -> [token_identifier token_period] token_identifier
+ token_left_paren [token_string] token_right_paren token_semicolon;
