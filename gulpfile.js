@@ -4,8 +4,16 @@ var rename = require('gulp-rename');
 var insert = require('gulp-insert');
 var chmod = require('gulp-chmod');
 var merge = require('merge-stream');
+var generator = require('gulp-parsergen');
 
-gulp.task('scripts', function() {
+gulp.task('parser', function() {
+  return gulp.src('plsql.grammar')
+    .pipe(generator())
+    .pipe(rename(function (path) { path.basename = 'parser'; path.extname = '.js'; }))
+    .pipe(gulp.dest('bin'));
+});
+
+gulp.task('scripts', ['parser'], function() {
   var src = gulp.src('src/*.es6')
     .pipe(babel())
     .pipe(rename(function (path) { path.extname = ".js"; }))
