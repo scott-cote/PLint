@@ -1,6 +1,6 @@
 {
   "name": "plsqlint",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha-2016052700",
   "description": "A lint code checker for PL/SQL",
   "main": "bin/index.js",
   "scripts": {
